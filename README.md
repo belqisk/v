@@ -1,20 +1,32 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Vocabulary Learning App (Next.js App Router)
 
-# Run and deploy your AI Studio app
+## 🚨 IMPORTANT: Clean Up Before Deployment
+To avoid "Blank Page" issues on Vercel, you **MUST DELETE** the following files from your project root if they exist. They conflict with Next.js:
+- ❌ `index.html`
+- ❌ `index.tsx`
+- ❌ `App.tsx`
+- ❌ `types.ts` (We use `lib/types.ts`)
+- ❌ `constants.ts` (We use `lib/constants.ts`)
 
-This contains everything you need to run your app locally.
+## Directory Structure
+Ensure your project looks like this:
+```
+/vocab-app
+  ├── app/                  # Next.js App Router
+  │   ├── layout.tsx        # Root layout
+  │   ├── page.tsx          # Home page
+  │   └── globals.css       # Global styles
+  ├── components/           # UI Components
+  ├── lib/                  # Shared types and constants
+  ├── public/               # Static assets
+  ├── next.config.js
+  ├── tailwind.config.js
+  ├── postcss.config.js     # Required for Tailwind
+  └── package.json
+```
 
-View your app in AI Studio: https://ai.studio/apps/drive/1bexbDf1ywgy3Nedauyfw5XvCMyBGKjkq
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Deployment
+1. Push to GitHub.
+2. Import to Vercel.
+3. Vercel will automatically detect Next.js.
+4. Deploy.
